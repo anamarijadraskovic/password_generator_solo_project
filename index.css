@@ -10,7 +10,11 @@ body {
 }
 
 main {
-    max-width: 90%;
+    max-width: 95%;
+}
+
+h1 {
+    font-size: 2.3rem;
 }
 
 p {
@@ -46,10 +50,12 @@ p {
 }
 
 .options {
-    width: 450px;
+    max-width: 450px;
     border-top: 2px solid #2F3E53;
     margin-top: 2em;
     padding-top: 2em;
+    display: flex;
+    flex-wrap: wrap;
 }
 
 #first-option,
@@ -61,6 +67,7 @@ p {
     background-color: #273549;
     color: #55F991;
     margin-right: .5em;
+    margin-bottom: 1em;
 }
 
 label {
