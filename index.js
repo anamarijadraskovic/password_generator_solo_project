@@ -17,6 +17,7 @@ function generatePasswords() {
     let pwd1 = generateRandomPasswords(passwordLength, array);
     firstPassword.textContent = pwd1;
     generateBtn.textContent = "New Password"
+    copyBtn.textContent = " Copy"
 }
 
 function whatArray(){
@@ -46,6 +47,6 @@ copyBtn.addEventListener("click", copyOnClick)
 function copyOnClick(){
     let pwdToCopy = firstPassword.textContent
     navigator.clipboard.writeText(pwdToCopy).then(() => {
-        alert("Password copied!")
+        copyBtn.textContent = "Copied!"
     })
 }
