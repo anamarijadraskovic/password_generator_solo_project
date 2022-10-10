@@ -21,3 +21,5 @@ User can choose the password length, modify it if it wants symbols or numbers in
 - logical operator &&
 - comparison operator if, else if
 - for loop
+
+<img width=220 src=./images/generator_img.png>
