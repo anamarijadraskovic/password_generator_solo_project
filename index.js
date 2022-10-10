@@ -2,50 +2,50 @@ const lettersArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O
 const numsArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const symbolsArray = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"];
 
-let firstPassword = document.getElementById("first-option");
+let passwordEl = document.getElementById("password-text");
 let generateBtn = document.getElementById("generate-btn");
 let symbolsExcluded = document.querySelector("#no-symbols-checkbox");
 let numsExcluded = document.querySelector("#no-nums-checkbox");
 let numOfLetters = document.querySelector("#letter-num");
 let copyBtn = document.getElementById("copy-text");
 
-generateBtn.addEventListener("click", generatePasswords)
+generateBtn.addEventListener("click", generatePasswords);
 
 function generatePasswords() {
-    let array = generateArray()
-    let passwordLength = numOfLetters.value
-    let pwd1 = generateRandomPasswords(passwordLength, array);
-    firstPassword.textContent = pwd1;
-    generateBtn.textContent = "New Password"
-    copyBtn.textContent = " Copy"
+    let array = generateArray();
+    let passwordLength = numOfLetters.value;
+    let password = generateRandomPasswords(passwordLength, array);
+    passwordEl.textContent = password;
+    generateBtn.textContent = "New Password";
+    copyBtn.textContent = "Copy";
 }
 
 function generateArray() {
-    let array = lettersArray
+    let array = lettersArray;
 
     if (!numsExcluded.checked)
-        array = array.concat(numsArray)
+        array = array.concat(numsArray);
 
-    if (!(symbolsExcluded.checked))
-        array = array.concat(symbolsArray)
+    if (!symbolsExcluded.checked)
+        array = array.concat(symbolsArray);
 
-    return array
+    return array;
 }
 
 function generateRandomPasswords(length, array){
-    let password = ""
+    let password = "";
     for (let i = 0; i < length; i++) {
         let randomNum = Math.floor(Math.random() * array.length);
         password += array[randomNum];
     }
-    return password
+    return password;
 }
 
-copyBtn.addEventListener("click", copyOnClick)
+copyBtn.addEventListener("click", copyOnClick);
 
 function copyOnClick(){
-    let pwdToCopy = firstPassword.textContent
+    let pwdToCopy = passwordEl.textContent;
     navigator.clipboard.writeText(pwdToCopy).then(() => {
-        copyBtn.textContent = "Copied!"
+        copyBtn.textContent = "Copied!";
     })
 }

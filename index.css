@@ -60,7 +60,7 @@ p {
     flex-wrap: wrap;
 }
 
-#first-option,
+#password-text,
 #copy-text {
     width: 210px;
     height: 40px;
