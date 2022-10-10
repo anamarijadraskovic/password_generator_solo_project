@@ -1,8 +1,8 @@
 # Password generator
 
-This password generator generates two random passwords.
+This password generator generates a new random password.
 
-User can choose the password length and if it wants symbols and numbers included in the password.
+User can choose the password length, modify it if it wants symbols or numbers included in the password, and copy-on-click button so it's easy to use the new password.
 
 ## Technologies used:
 - HTML5
@@ -17,6 +17,7 @@ User can choose the password length and if it wants symbols and numbers included
 - Array.concat()
 - Math.random()
 - Math.floor()
+- Clipboard.writeText()
 - logical operator &&
 - comparison operator if, else if
 - for loop

@@ -44,7 +44,9 @@ p {
 }
 
 #generate-btn:hover,
-#generate-btn:focus {
+#generate-btn:focus,
+#copy-text:hover,
+#copy-text:focus {
     color: #10B981;
     background-color: white;
 }
@@ -59,7 +61,7 @@ p {
 }
 
 #first-option,
-#second-option {
+#copy-text {
     width: 210px;
     height: 40px;
     border: none;
@@ -68,6 +70,11 @@ p {
     color: #55F991;
     margin-right: .5em;
     margin-bottom: 1em;
+}
+
+#copy-text {
+    background-color: #ECFDF5;
+    color: #273549;
 }
 
 label {

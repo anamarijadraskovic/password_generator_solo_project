@@ -3,11 +3,11 @@ const numsArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const symbolsArray = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"];
 
 let firstPassword = document.getElementById("first-option");
-let secondPassword = document.getElementById("second-option");
 let generateBtn = document.getElementById("generate-btn");
 let symbolsCheck = document.querySelector("#no-symbols-checkbox");
 let numsCheck = document.querySelector("#no-nums-checkbox");
 let numOfLetters = document.querySelector("#letter-num");
+let copyBtn = document.getElementById("copy-text");
 
 generateBtn.addEventListener("click", generatePasswords)
 
@@ -15,10 +15,8 @@ function generatePasswords() {
     let array = whatArray()
     let passwordLength = numOfLetters.value
     let pwd1 = generateRandomPasswords(passwordLength, array);
-    let pwd2 = generateRandomPasswords(passwordLength, array);
     firstPassword.textContent = pwd1;
-    secondPassword.textContent = pwd2
-    generateBtn.textContent = "New Passwords"
+    generateBtn.textContent = "New Password"
 }
 
 function whatArray(){
@@ -41,4 +39,13 @@ function generateRandomPasswords(length, array){
         password += array[randomNum];
     }
     return password
+}
+
+copyBtn.addEventListener("click", copyOnClick)
+
+function copyOnClick(){
+    let pwdToCopy = firstPassword.textContent
+    navigator.clipboard.writeText(pwdToCopy).then(() => {
+        alert("Password copied!")
+    })
 }
