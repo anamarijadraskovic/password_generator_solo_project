@@ -4,15 +4,15 @@ const symbolsArray = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+
 
 let firstPassword = document.getElementById("first-option");
 let generateBtn = document.getElementById("generate-btn");
-let symbolsCheck = document.querySelector("#no-symbols-checkbox");
-let numsCheck = document.querySelector("#no-nums-checkbox");
+let symbolsExcluded = document.querySelector("#no-symbols-checkbox");
+let numsExcluded = document.querySelector("#no-nums-checkbox");
 let numOfLetters = document.querySelector("#letter-num");
 let copyBtn = document.getElementById("copy-text");
 
 generateBtn.addEventListener("click", generatePasswords)
 
 function generatePasswords() {
-    let array = whatArray()
+    let array = generateArray()
     let passwordLength = numOfLetters.value
     let pwd1 = generateRandomPasswords(passwordLength, array);
     firstPassword.textContent = pwd1;
@@ -20,17 +20,16 @@ function generatePasswords() {
     copyBtn.textContent = " Copy"
 }
 
-function whatArray(){
-    if (symbolsCheck.checked === false && numsCheck.checked === false) {
-        return lettersArray.concat(numsArray, symbolsArray)
-    }
-    if (symbolsCheck.checked === true && numsCheck.checked === false) {
-        return lettersArray.concat(numsArray)
-    }
-    if (symbolsCheck.checked === false && numsCheck.checked === true){
-        return lettersArray.concat(symbolsArray)
-    }
-    return lettersArray
+function generateArray() {
+    let array = lettersArray
+
+    if (!numsExcluded.checked)
+        array = array.concat(numsArray)
+
+    if (!(symbolsExcluded.checked))
+        array = array.concat(symbolsArray)
+
+    return array
 }
 
 function generateRandomPasswords(length, array){
