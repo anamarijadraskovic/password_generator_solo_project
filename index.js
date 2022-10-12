@@ -17,7 +17,7 @@ function generatePasswords() {
     let password = generateRandomPasswords(passwordLength, array);
     passwordEl.textContent = password;
     generateBtn.textContent = "New Password";
-    copyBtn.textContent = "Copy";
+    copyBtn.innerHTML =  '<i class="fa-regular fa-copy"></i> Copy';
 }
 
 function generateArray() {
