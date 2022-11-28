@@ -1,27 +1,30 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Password Generator</title>
-        <meta name="viewport" content="initial-scale=1.0, width=device-width">
-        <script src="https://kit.fontawesome.com/55c28f6f51.js" crossorigin="anonymous"></script>
-        <link rel="stylesheet" href="index.css">
-    </head>
-    <body>
-        <main>
-            <h1>Generate a <span class="green">random password</span></h1>
-            <p>Never use an insecure password again.</p>
-            <button id="generate-btn">Generate password</button>
-                <label for="letter-num">Number of letters: </label>
-            <input type="number" id="letter-num" name="letter-num" value="15"><br>
-            <input type="checkbox" id="no-symbols-checkbox" name="noSymbols"">
-                <label for="noSymbols">No symbols</label><br>
-            <input type="checkbox" id="no-nums-checkbox" name="noNums"">
-                <label for="noNums">No numbers</label><br>
-            <div class="options">
-                <button id="password-text"></button>
-                <button id="copy-text"><i class="fa-regular fa-copy"></i> Copy</button>
-            </div>
-        </main>
-        <script src="index.js"></script>
-    </body>
+
+<head>
+    <title>Password Generator</title>
+    <meta name="viewport" content="initial-scale=1.0, width=device-width">
+    <script src="https://kit.fontawesome.com/55c28f6f51.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <main>
+        <h1>Generate a <span class="green">random password</span></h1>
+        <p>Never use an insecure password again.</p>
+        <button id="generate-btn">Generate password</button>
+        <label for="letter-num">Number of letters: </label>
+        <input type="number" id="letter-num" name="letter-num" value="15"><br>
+        <input type="checkbox" id="no-symbols-checkbox" name="noSymbols"">
+                <label for="no-symbols-checkbox">No symbols</label><br>
+        <input type="checkbox" id="no-nums-checkbox" name="noNums"">
+                <label for="no-nums-checkbox">No numbers</label><br>
+        <div class="options">
+            <button id="password-text"></button>
+            <button id="copy-text"><i class="fa-regular fa-copy"></i> Copy</button>
+        </div>
+    </main>
+    <script src="index.js"></script>
+</body>
+
 </html>

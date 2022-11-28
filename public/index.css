@@ -1,7 +1,7 @@
 body {
     background-color: #1F2937;
     color: white;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -28,7 +28,7 @@ p {
     display: block;
 }
 
-#generate-btn{
+#generate-btn {
     background-color: #10B981;
     color: white;
     border: none;
@@ -85,13 +85,13 @@ label {
 }
 
 input[type="checkbox"] {
-    background-color: #fff;
     margin: 0;
     font: inherit;
     width: 1.15em;
     height: 1.15em;
     margin: .5em 0;
     padding: 5px;
+    accent-color: #10B981;
 }
 
 input[type="number"] {
