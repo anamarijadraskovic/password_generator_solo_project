@@ -1,0 +1,7 @@
+{
+  "hosting": {
+    "site": "drasko-password-generator",
+
+    "public": "public"
+  }
+}
