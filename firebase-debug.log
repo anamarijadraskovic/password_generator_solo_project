@@ -1,0 +1,26 @@
+[debug] [2025-08-22T13:14:31.786Z] ----------------------------------------------------------------------
+[debug] [2025-08-22T13:14:31.788Z] Command:       /usr/local/share/nvm/versions/node/v22.17.0/bin/node /home/codespace/nvm/current/bin/firebase init
+[debug] [2025-08-22T13:14:31.788Z] CLI Version:   14.14.0
+[debug] [2025-08-22T13:14:31.788Z] Platform:      linux
+[debug] [2025-08-22T13:14:31.788Z] Node Version:  v22.17.0
+[debug] [2025-08-22T13:14:31.789Z] Time:          Fri Aug 22 2025 13:14:31 GMT+0000 (Coordinated Universal Time)
+[debug] [2025-08-22T13:14:31.789Z] Env Overrides: GITHUB_API_URL, GITHUB_API_URL
+[debug] [2025-08-22T13:14:31.789Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2025-08-22T13:14:31.792Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2025-08-22T13:14:31.792Z] > authorizing via signed-in user (ana.marija.draskovic007@gmail.com)
+[info] 
+     ######## #### ########  ######## ########     ###     ######  ########
+     ##        ##  ##     ## ##       ##     ##  ##   ##  ##       ##
+     ######    ##  ########  ######   ########  #########  ######  ######
+     ##        ##  ##    ##  ##       ##     ## ##     ##       ## ##
+     ##       #### ##     ## ######## ########  ##     ##  ######  ########
+
+You're about to initialize a Firebase project in this directory:
+
+  /workspaces/password_generator_solo_project
+
+Before we get started, keep in mind:
+
+  * You are currently outside your home directory
+
