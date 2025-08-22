@@ -7,7 +7,7 @@ let generateBtn = document.getElementById("generate-btn");
 let symbolsExcluded = document.querySelector("#no-symbols-checkbox");
 let numsExcluded = document.querySelector("#no-nums-checkbox");
 let numOfLetters = document.querySelector("#letter-num");
-let copyBtn = document.getElementById("copy-text");
+let copyBtn = document.getElementById("copy-text-btn");
 
 generateBtn.addEventListener("click", generatePasswords);
 
@@ -49,3 +49,20 @@ function copyOnClick(){
         copyBtn.textContent = "Copied!";
     })
 }
+
+const changeThemeBtn = document.getElementById("change-theme-btn");
+const root = document.documentElement;
+
+changeThemeBtn.addEventListener("click", () => {
+    if (root.getAttribute("data-theme") === "dark") {
+        root.removeAttribute("data-theme"); // back to light
+        localStorage.setItem("theme", "light");
+    } else {
+        root.setAttribute("data-theme", "dark");
+        localStorage.setItem("theme", "dark");
+    }
+
+    if (localStorage.getItem("theme") === "dark") {
+    root.setAttribute("data-theme", "dark");
+}
+})

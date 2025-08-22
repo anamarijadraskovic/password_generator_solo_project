@@ -1,24 +1,43 @@
+:root {
+    --main-bg-color: #ECFDF5;
+    --title-color: #2b283a;
+    --text-color: #6B7280;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+[data-theme="dark"] {
+    --main-bg-color: #273549;
+    --title-color: white;
+    --text-color: #d5d4d8;
+}
+
 body {
-    background-color: #1F2937;
-    color: white;
+    background-color: var(--main-bg-color);
+    color: var(--text-color);
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     display: flex;
-    align-items: center;
     justify-content: center;
-    height: 100vh;
+    min-height: 100vh;
     overflow-y: hidden;
+    margin: 0;
 }
 
 main {
     max-width: 95%;
+    align-self: center;
 }
 
 h1 {
     font-size: 2.3rem;
+    margin-bottom: 0.5em;
+    color: var(--title-color)
 }
 
 p {
-    color: #E5E7EB;
+    color: var(--text-color);
     margin-bottom: 2rem;
     letter-spacing: .4px;
 }
@@ -28,27 +47,72 @@ p {
     display: block;
 }
 
-#generate-btn {
-    background-color: #10B981;
-    color: white;
-    border: none;
+button {
     border-radius: 7px;
-    padding: .7em 1em;
-    font-size: 1.2rem;
-    border: #10B981 solid 2px;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    border: none;
+}
+
+#change-theme-btn {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: auto;
+    padding: 0.5em 1em;
+    background-color: #273549;
+    color: #55F991;
 }
 
 #generate-btn {
-    display: block;
+    background-color: #10B981;
+    color: white;
+    border: 2px solid #10B981;
+    padding: .7em 1em;
+    font-size: 1.2rem;
     margin: 1rem 0;
 }
 
 #generate-btn:hover,
-#generate-btn:focus,
-#copy-text:hover,
-#copy-text:focus {
+#generate-btn:focus {
     color: #10B981;
     background-color: white;
+}
+
+#copy-text-btn {
+    width: 210px;
+    height: 40px;
+    border: none;
+    border-radius: 7px;
+    margin-right: .5em;
+    margin-bottom: 1em;
+    transition: all 0.25s ease;
+    border: 2px solid #273549;
+}
+
+#password-text {
+    width: 210px;
+    height: 40px;
+    border: none;
+    border-radius: 7px;
+    border: 2px solid #ECFDF5;
+    background-color: #273549;
+    color: #55F991;
+    margin-right: .5em;
+    margin-bottom: 1em;
+}
+
+#copy-text-btn {
+    background-color: #ECFDF5;
+    color: #273549;
+}
+
+#copy-text-btn:hover,
+#copy-text-btn:focus,
+#change-theme-btn:hover,
+#change-theme-btn:focus {
+    background-color: #10B981;
+    color: white;
 }
 
 .options {
@@ -58,50 +122,35 @@ p {
     padding-top: 2em;
     display: flex;
     flex-wrap: wrap;
-}
-
-#password-text,
-#copy-text {
-    width: 210px;
-    height: 40px;
-    border: none;
-    border-radius: 7px;
-    background-color: #273549;
-    color: #55F991;
-    margin-right: .5em;
-    margin-bottom: 1em;
-}
-
-#copy-text {
-    background-color: #ECFDF5;
-    color: #273549;
+    justify-content: center;
 }
 
 label {
     font-size: 1.2em;
     font-family: inherit;
-    line-height: 1.4px;
-    margin: 3em 0;
+    line-height: 1.4; /* fixed */
+    margin: 1em 0;
 }
 
 input[type="checkbox"] {
-    margin: 0;
-    font: inherit;
     width: 1.15em;
     height: 1.15em;
     margin: .5em 0;
-    padding: 5px;
     accent-color: #10B981;
 }
 
 input[type="number"] {
     width: 3em;
     text-align: center;
-    font-size: 1.2em;
-    padding: 5px;
-    padding-right: 0;
-    color: #273549;
-    font: inherit;
     font-size: 1.1rem;
+    padding: 5px;
+    color: #273549;
     border-radius: 7px;
+}
+
+body, .section, .hero, input, button {
+  transition: 
+    background 0.3s ease,
+    color 0.3s ease,
+    border 0.3s ease;
 }
