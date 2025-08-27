@@ -14,7 +14,7 @@ generateBtn.addEventListener("click", generatePasswords);
 function generatePasswords() {
   let array = generateArray();
   let passwordLength = numOfLetters.value;
-  passwordEl.textContent = generateRandomPasswords(passwordLength, array);
+  passwordEl.value = generateRandomPasswords(passwordLength, array);
   generateBtn.textContent = "New Password";
   copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
 }
@@ -41,7 +41,7 @@ function generateRandomPasswords(length, array) {
 copyBtn.addEventListener("click", copyOnClick);
 
 function copyOnClick() {
-  let pwdToCopy = passwordEl.textContent;
+  let pwdToCopy = passwordEl.value;
   navigator.clipboard.writeText(pwdToCopy).then(() => {
     copyBtn.textContent = "Copied!";
   });
