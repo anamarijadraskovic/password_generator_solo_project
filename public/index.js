@@ -12,57 +12,54 @@ let copyBtn = document.getElementById("copy-text-btn");
 generateBtn.addEventListener("click", generatePasswords);
 
 function generatePasswords() {
-    let array = generateArray();
-    let passwordLength = numOfLetters.value;
-    let password = generateRandomPasswords(passwordLength, array);
-    passwordEl.textContent = password;
-    generateBtn.textContent = "New Password";
-    copyBtn.innerHTML =  '<i class="fa-regular fa-copy"></i> Copy';
+  let array = generateArray();
+  let passwordLength = numOfLetters.value;
+  passwordEl.textContent = generateRandomPasswords(passwordLength, array);
+  generateBtn.textContent = "New Password";
+  copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
 }
 
 function generateArray() {
-    let array = lettersArray;
+  let array = lettersArray;
 
-    if (!numsExcluded.checked)
-        array = array.concat(numsArray);
+  if (!numsExcluded.checked) array = array.concat(numsArray);
 
-    if (!symbolsExcluded.checked)
-        array = array.concat(symbolsArray);
+  if (!symbolsExcluded.checked) array = array.concat(symbolsArray);
 
-    return array;
+  return array;
 }
 
-function generateRandomPasswords(length, array){
-    let password = "";
-    for (let i = 0; i < length; i++) {
-        let randomNum = Math.floor(Math.random() * array.length);
-        password += array[randomNum];
-    }
-    return password;
+function generateRandomPasswords(length, array) {
+  let password = "";
+  for (let i = 0; i < length; i++) {
+    let randomNum = Math.floor(Math.random() * array.length);
+    password += array[randomNum];
+  }
+  return password;
 }
 
 copyBtn.addEventListener("click", copyOnClick);
 
-function copyOnClick(){
-    let pwdToCopy = passwordEl.textContent;
-    navigator.clipboard.writeText(pwdToCopy).then(() => {
-        copyBtn.textContent = "Copied!";
-    })
+function copyOnClick() {
+  let pwdToCopy = passwordEl.textContent;
+  navigator.clipboard.writeText(pwdToCopy).then(() => {
+    copyBtn.textContent = "Copied!";
+  });
 }
 
 const changeThemeBtn = document.getElementById("change-theme-btn");
 const root = document.documentElement;
 
 changeThemeBtn.addEventListener("click", () => {
-    if (root.getAttribute("data-theme") === "dark") {
-        root.removeAttribute("data-theme"); // back to light
-        localStorage.setItem("theme", "light");
-    } else {
-        root.setAttribute("data-theme", "dark");
-        localStorage.setItem("theme", "dark");
-    }
-
-    if (localStorage.getItem("theme") === "dark") {
+  if (root.getAttribute("data-theme") === "dark") {
+    root.removeAttribute("data-theme"); // back to light
+    localStorage.setItem("theme", "light");
+  } else {
     root.setAttribute("data-theme", "dark");
-}
-})
+    localStorage.setItem("theme", "dark");
+  }
+
+  if (localStorage.getItem("theme") === "dark") {
+    root.setAttribute("data-theme", "dark");
+  }
+});
