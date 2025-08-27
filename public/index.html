@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <title>Password Generator</title>
@@ -9,27 +9,51 @@
 </head>
 
 <body>
-    <button id="change-theme-btn">Change theme</button>
-    <main>
-        <h1>Generate a <span class="green">random password</span></h1>
-        <p>Never use an insecure password again.</p>
-        <button id="generate-btn">Generate password</button>
+<button id="change-theme-btn">Change theme</button>
+<main>
+    <h1>Generate a
+        <span class="accent-text">random password</span>
+    </h1>
+    <p>Never use an insecure password again.</p>
+    <button id="generate-btn">Generate password</button>
+
+    <div>
         <label for="letter-num">Number of letters: </label>
-        <input type="number" id="letter-num" name="letter-num" value="15"><br>
-        <input type="checkbox" id="no-symbols-checkbox" name="noSymbols"">
-                <label for="no-symbols-checkbox">No symbols</label><br>
-        <input type="checkbox" id="no-nums-checkbox" name="noNums"">
-                <label for="no-nums-checkbox">No numbers</label><br>
-        <div class="options">
-            <button id="password-text"></button>
-            <button id="copy-text-btn"><i class="fa-regular fa-copy"></i> Copy</button>
-        </div>
-    </main>
-    <script src="index.js"></script>
-    <script type="module">
+        <input type="number" id="letter-num" name="letter-num" value="15">
+    </div>
+
+    <div>
+        <input type="checkbox" id="no-symbols-checkbox" name="noSymbols">
+        <label for="no-symbols-checkbox">No symbols</label>
+    </div>
+
+    <div>
+        <input type="checkbox" id="no-nums-checkbox" name="noNums">
+        <label for="no-nums-checkbox">No numbers</label>
+    </div>
+
+    <div class="options">
+        <label for="password-text" class="sr-only">Password will be displayed here</label>
+        <input
+                id="password-text"
+                type="text"
+                placeholder="New password"
+                readonly aria-live="polite"
+        >
+
+        <button id="copy-text-btn">
+            <i class="fa-regular fa-copy"></i>
+            <span class="sr-only">Copy password to clipboard</span>
+            Copy
+        </button>
+    </div>
+</main>
+
+<script src="index.js"></script>
+<script type="module">
     // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-analytics.js";
+    import {initializeApp} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+    import {getAnalytics} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-analytics.js";
     // TODO: Add SDKs for Firebase products that you want to use
     // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -48,7 +72,7 @@
     // Initialize Firebase
     const app = initializeApp(firebaseConfig);
     const analytics = getAnalytics(app);
-    </script>
+</script>
 </body>
 
 </html>
