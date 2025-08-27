@@ -42,7 +42,7 @@ main {
 h1 {
     font-size: 2.3rem;
     margin-bottom: 0.5em;
-    color: var(--title-color)
+    color: var(--title-color);
 }
 
 p {
@@ -55,6 +55,8 @@ button {
     border-radius: var(--main-border-radius);
     cursor: pointer;
     border: 2px solid var(--accent-color);
+    font-family: inherit;
+    font-size: 1rem;
 }
 
 label {
@@ -71,7 +73,7 @@ input[type="checkbox"] {
 }
 
 input[type="number"] {
-    width: 3em;
+    width: 3.5rem;
     text-align: center;
     font-size: 1.1rem;
     padding: 5px;
@@ -113,8 +115,6 @@ input[type="number"] {
     width: 210px;
     height: 40px;
     border-radius: var(--main-border-radius);
-    margin-right: .5em;
-    margin-bottom: 1em;
     border-color: #273549;
     background-color: #ECFDF5;
     color: #273549;
@@ -124,7 +124,7 @@ input[type="number"] {
     width: 210px;
     height: 40px;
     border-radius: var(--main-border-radius);
-    border-color: #ECFDF5;
+    border: 2px solid #ECFDF5;
     background-color: #273549;
     color: #55F991;
     text-align: center;
@@ -132,8 +132,8 @@ input[type="number"] {
 }
 
 #copy-text-btn:hover,
-#copy-text-btn:focus,
 #change-theme-btn:hover,
+#copy-text-btn:focus,
 #change-theme-btn:focus {
     background-color: var(--accent-color);
     color: white;
