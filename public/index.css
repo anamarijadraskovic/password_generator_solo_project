@@ -124,7 +124,7 @@ input[type="number"] {
     width: 210px;
     height: 40px;
     border-radius: var(--main-border-radius);
-    border: 2px solid #ECFDF5;
+    border: 2px solid var(--main-bg-color);
     background-color: #273549;
     color: #55F991;
     text-align: center;
