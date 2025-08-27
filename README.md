@@ -1,6 +1,6 @@
 # 🔐 Password Generator
 
-A simple password generator web app.  
+A simple, responsive password generator web app.  
 Users can:
 - Choose the password length
 - Decide whether to include symbols or numbers
