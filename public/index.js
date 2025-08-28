@@ -1,6 +1,26 @@
+import { logEvent } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-analytics.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-analytics.js";
+
 const lettersArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
 const numsArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const symbolsArray = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"];
+
+// Your web app's Firebase configuration
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyAkY8rg1qRkQV0VcuF0P22PWRHejPDTc-8",
+  authDomain: "drasko-password-generator.firebaseapp.com",
+  projectId: "drasko-password-generator",
+  storageBucket: "drasko-password-generator.firebasestorage.app",
+  messagingSenderId: "499672938603",
+  appId: "1:499672938603:web:ff3cec7ed51f887900592e",
+  measurementId: "G-NWNJG4QPFE"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);
 
 const generateBtn = document.getElementById("generate-password-btn");
 const passwordOutputEl = document.getElementById("password-output");
@@ -11,7 +31,15 @@ const copyBtn = document.getElementById("copy-password-btn");
 const changeThemeBtn = document.getElementById("change-theme-btn");
 const root = document.documentElement;
 
-generateBtn.addEventListener("click", generatePasswords);
+generateBtn.addEventListener("click", () => {
+  generatePasswords();
+
+  logEvent(analytics, "generate_password", {
+    length: Number(passwordLengthEl.value),
+    includeNumbers: !numsExcluded.checked,
+    includeSymbols: !symbolsExcluded.checked
+  });
+});
 
 function generatePasswords() {
   let array = generateArray();
@@ -36,7 +64,10 @@ function generateRandomPassword(length, array) {
   return password;
 }
 
-copyBtn.addEventListener("click", copyOnClick);
+copyBtn.addEventListener("click", () => {
+  copyOnClick();
+  logEvent(analytics, "copy_password");
+});
 
 let copyTimeout;
 
@@ -46,7 +77,7 @@ function copyOnClick() {
     copyBtn.textContent = "Copied!";
     clearTimeout(copyTimeout);
     copyTimeout = setTimeout(() => {
-      copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+      copyBtn.innerHTML = "<i class=\"fa-regular fa-copy\"></i> Copy";
     }, 2000);
   });
 }
