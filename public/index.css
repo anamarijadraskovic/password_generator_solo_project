@@ -42,7 +42,7 @@ main {
 h1 {
     font-size: 2.3rem;
     margin-bottom: 0.5em;
-    color: var(--title-color);
+    color: var(--title-color)
 }
 
 p {
@@ -55,8 +55,6 @@ button {
     border-radius: var(--main-border-radius);
     cursor: pointer;
     border: 2px solid var(--accent-color);
-    font-family: inherit;
-    font-size: 1rem;
 }
 
 label {
@@ -73,10 +71,10 @@ input[type="checkbox"] {
 }
 
 input[type="number"] {
-    width: 3.5rem;
+    width: 3em;
     text-align: center;
     font-size: 1.1rem;
-    padding: 5px;
+    padding: .4rem;
     color: #273549;
     border-radius: var(--main-border-radius);
 }
@@ -97,7 +95,7 @@ input[type="number"] {
     letter-spacing: .5px;
 }
 
-#generate-btn {
+#generate-password-btn {
     background-color: var(--accent-color);
     color: white;
     padding: .7em 1em;
@@ -105,42 +103,44 @@ input[type="number"] {
     margin: 1rem 0;
 }
 
-#generate-btn:hover,
-#generate-btn:focus {
+#generate-password-btn:hover,
+#generate-password-btn:focus {
     color: var(--accent-color);
     background-color: white;
 }
 
-#copy-text-btn {
-    width: 210px;
-    height: 40px;
+#password-output {
+    width: 13rem;
+    height: 2.5rem;
     border-radius: var(--main-border-radius);
-    border-color: #273549;
-    background-color: #ECFDF5;
-    color: #273549;
-}
-
-#password-text {
-    width: 210px;
-    height: 40px;
-    border-radius: var(--main-border-radius);
-    border: 2px solid var(--main-bg-color);
+    border-color: #ECFDF5;
     background-color: #273549;
     color: #55F991;
     text-align: center;
     font-size: 1rem;
 }
 
-#copy-text-btn:hover,
+#copy-password-btn {
+    width: 13rem;
+    height: 2.5rem;
+    border-radius: var(--main-border-radius);
+    margin-right: .5em;
+    margin-bottom: 1em;
+    border-color: #273549;
+    background-color: #ECFDF5;
+    color: #273549;
+}
+
+#copy-password-btn:hover,
+#copy-password-btn:focus,
 #change-theme-btn:hover,
-#copy-text-btn:focus,
 #change-theme-btn:focus {
     background-color: var(--accent-color);
     color: white;
 }
 
-.options {
-    max-width: 450px;
+.options-container {
+    max-width: 28rem;
     border-top: 2px solid #2F3E53;
     margin-top: 2em;
     padding-top: 2em;

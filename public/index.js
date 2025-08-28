@@ -2,11 +2,11 @@ const lettersArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O
 const numsArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 const symbolsArray = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"];
 
-const passwordEl = document.getElementById("password-text");
-const generateBtn = document.getElementById("generate-btn");
+const generateBtn = document.getElementById("generate-password-btn");
+const passwordOutputEl = document.getElementById("password-output");
+const passwordLengthEl = document.querySelector("#password-length-input");
 const symbolsExcluded = document.querySelector("#no-symbols-checkbox");
 const numsExcluded = document.querySelector("#no-nums-checkbox");
-const numOfLetters = document.querySelector("#letter-num");
 const copyBtn = document.getElementById("copy-text-btn");
 const changeThemeBtn = document.getElementById("change-theme-btn");
 const root = document.documentElement;
@@ -15,10 +15,8 @@ generateBtn.addEventListener("click", generatePasswords);
 
 function generatePasswords() {
   let array = generateArray();
-  let passwordLength = Number(numOfLetters.value);
-  passwordEl.value = generateRandomPassword(passwordLength, array);
-  generateBtn.textContent = "New Password";
-  copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+  let passwordLength = Number(passwordLengthEl.value);
+  passwordOutputEl.value = generateRandomPassword(passwordLength, array);
 }
 
 function generateArray() {
@@ -39,14 +37,16 @@ function generateRandomPassword(length, array) {
 
 copyBtn.addEventListener("click", copyOnClick);
 
+let copyTimeout;
+
 function copyOnClick() {
-  let pwdToCopy = passwordEl.value;
-  navigator.clipboard.writeText(pwdToCopy).then(() => {
+  let password = passwordOutputEl.value;
+  navigator.clipboard.writeText(password).then(() => {
     copyBtn.textContent = "Copied!";
-    setTimeout(
-      () => (copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy'),
-      2000,
-    );
+    clearTimeout(copyTimeout);
+    copyTimeout = setTimeout(() => {
+      copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
+    }, 2000);
   });
 }
 

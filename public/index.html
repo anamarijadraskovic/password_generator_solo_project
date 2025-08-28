@@ -15,11 +15,11 @@
         <span class="accent-text">random password</span>
     </h1>
     <p>Never use an insecure password again.</p>
-    <button id="generate-btn">Generate password</button>
+    <button id="generate-password-btn">Generate password</button>
 
     <div>
-        <label for="letter-num">Number of letters: </label>
-        <input type="number" id="letter-num" name="letter-num" value="15">
+        <label for="password-length-input">Number of letters: </label>
+        <input type="number" id="password-length-input" name="passwordLength" value="15">
     </div>
 
     <div>
@@ -33,15 +33,17 @@
     </div>
 
     <div class="options">
-        <label for="password-text" class="sr-only">Password will be displayed here</label>
+        <label for="password-output"></label>
         <input
-                id="password-text"
+                id="password-output"
                 type="text"
+                readonly
                 placeholder="New password"
-                readonly aria-live="polite"
+                name="passwordOutput"
+                aria-live="polite"
         >
 
-        <button id="copy-text-btn">
+        <button id="copy-password-btn">
             <i class="fa-regular fa-copy"></i>
             <span class="sr-only">Copy password to clipboard</span>
             Copy

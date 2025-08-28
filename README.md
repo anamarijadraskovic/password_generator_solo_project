@@ -19,14 +19,17 @@ Users can:
 
 ---
 
-## 📚 What I Practiced
-This project helped me strengthen my JavaScript fundamentals, including:
-- DOM manipulation: `.addEventListener()`, `.querySelector()`, `.getElementById()`
-- Array methods: `Array.concat()`
-- Randomization: `Math.random()`, `Math.floor()`
-- Clipboard API: `navigator.clipboard.writeText()`
-- Control flow: `if`, `else if`, `&&`, `for` loops
-- Theme toggling: dynamically updating classes/styles for light/dark mode
+## 📚 What I Learned
+While building this project, I practiced:
+- DOM manipulation with `.addEventListener()`, `.querySelector()`, and `.getElementById()`
+- Using array methods like `concat()` for building character pools
+- Implementing randomization with `Math.random()` and `Math.floor()`
+- Copying text to the clipboard with the Clipboard API
+- Applying control flow (`if`, `else if`, `&&`, `for` loops) in practical use
+- Toggling themes dynamically for light/dark mode
+- Deploying a static site using Firebase Hosting
+- Adding accessible labels and improving screen reader support
+
 
 ---
 
