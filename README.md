@@ -1,11 +1,12 @@
 # 🔐 Password Generator
 
-A simple, responsive password generator web app.  
+A simple, responsive password generator web app and Progressive Web App (PWA).  
 Users can:
 - Choose the password length
 - Decide whether to include symbols or numbers
 - Copy the generated password with one click
 - Switch between themes
+- Installable as a Progressive Web App (PWA) for offline use
 
 👉 **Live Demo:** [Password Generator](https://drasko-password-generator.firebaseapp.com/)
 
