@@ -17,6 +17,7 @@ function generatePasswords() {
   let array = generateArray();
   let passwordLength = Number(passwordLengthEl.value);
   passwordOutputEl.value = generateRandomPassword(passwordLength, array);
+  generateBtn.textContent = "New Password";
 }
 
 function generateArray() {
