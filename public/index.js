@@ -7,7 +7,7 @@ const passwordOutputEl = document.getElementById("password-output");
 const passwordLengthEl = document.querySelector("#password-length-input");
 const symbolsExcluded = document.querySelector("#no-symbols-checkbox");
 const numsExcluded = document.querySelector("#no-nums-checkbox");
-const copyBtn = document.getElementById("copy-text-btn");
+const copyBtn = document.getElementById("copy-password-btn");
 const changeThemeBtn = document.getElementById("change-theme-btn");
 const root = document.documentElement;
 
