@@ -1,6 +1,7 @@
 # 🔐 Password Generator
 
 A simple, responsive password generator web app and Progressive Web App (PWA).  
+
 Users can:
 - Choose the password length
 - Decide whether to include symbols or numbers
