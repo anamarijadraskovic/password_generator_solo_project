@@ -1,90 +1,134 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
+  <head>
     <title>Password Generator</title>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description"
-          content="Generate secure random passwords with customizable options. Copy to clipboard easily and switch themes.">
-    <meta name="author" content="Ana-Marija Drašković">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Generate secure random passwords with customizable options. Copy to clipboard easily and switch themes."
+    />
+    <meta name="author" content="Ana-Marija Drašković" />
 
     <!-- Open Graph / Social Media -->
-    <meta property="og:title" content="Password Generator">
-    <meta property="og:description" content="Generate secure random passwords with customizable options.">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Password Generator">
-    <meta property="og:url" content="https://drasko-password-generator.firebaseapp.com/">
-    <meta property="og:image" content="https://drasko-password-generator.firebaseapp.com/images/android-chrome-192x192.png">
+    <meta property="og:title" content="Password Generator" />
+    <meta
+      property="og:description"
+      content="Generate secure random passwords with customizable options."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Password Generator" />
+    <meta
+      property="og:url"
+      content="https://drasko-password-generator.firebaseapp.com/"
+    />
+    <meta
+      property="og:image"
+      content="https://drasko-password-generator.firebaseapp.com/images/android-chrome-192x192.png"
+    />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Password Generator">
-    <meta name="twitter:description" content="Generate secure random passwords with customizable options.">
-    <meta name="twitter:image" content="https://drasko-password-generator.firebaseapp.com/images/android-chrome-192x192.png">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Password Generator" />
+    <meta
+      name="twitter:description"
+      content="Generate secure random passwords with customizable options."
+    />
+    <meta
+      name="twitter:image"
+      content="https://drasko-password-generator.firebaseapp.com/images/android-chrome-192x192.png"
+    />
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
-    <link rel="icon" type="image/png" href="images/favicon.ico">
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="images/apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="images/favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="images/favicon-16x16.png"
+    />
+    <link rel="icon" type="image/png" href="images/favicon.ico" />
 
     <!-- PWA manifest -->
-    <link rel="manifest" href="/site.webmanifest">
+    <link rel="manifest" href="/site.webmanifest" />
 
     <!-- Styles & Fonts -->
-    <link rel="stylesheet" href="index.css">
-    <script src="https://kit.fontawesome.com/55c28f6f51.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="index.css" />
+    <script
+      src="https://kit.fontawesome.com/55c28f6f51.js"
+      crossorigin="anonymous"
+    ></script>
 
     <!-- Theme color for mobile UI -->
-    <meta name="theme-color" content="#273549">
-    <meta name="theme-color" content="#273549" media="(prefers-color-scheme: dark)">
-</head>
+    <meta name="theme-color" content="#273549" />
+    <meta
+      name="theme-color"
+      content="#273549"
+      media="(prefers-color-scheme: dark)"
+    />
+  </head>
 
-<body>
-<button id="change-theme-btn">Change theme</button>
-<main>
-    <h1>Generate a
+  <body>
+    <button id="change-theme-btn">Change theme</button>
+    <main>
+      <h1>
+        Generate a
         <span class="accent-text">random password</span>
-    </h1>
-    <p>Never use an insecure password again.</p>
-    <button id="generate-password-btn">Generate password</button>
+      </h1>
+      <p>Never use an insecure password again.</p>
+      <button id="generate-password-btn">Generate password</button>
 
-    <div>
+      <div>
         <label for="password-length-input">Number of letters: </label>
-        <input type="number" id="password-length-input" name="passwordLength" value="15">
-    </div>
-
-    <div>
-        <input type="checkbox" id="no-symbols-checkbox" name="noSymbols">
-        <label for="no-symbols-checkbox">No symbols</label>
-    </div>
-
-    <div>
-        <input type="checkbox" id="no-nums-checkbox" name="noNums">
-        <label for="no-nums-checkbox">No numbers</label>
-    </div>
-
-    <div class="options-container">
-        <label for="password-output" class="sr-only">Password will be displayed here</label>
         <input
-                id="password-output"
-                type="text"
-                readonly
-                placeholder="New password"
-                name="passwordOutput"
-                aria-live="polite"
+          type="number"
+          id="password-length-input"
+          name="passwordLength"
+          value="15"
+        />
+      </div>
+
+      <div>
+        <input type="checkbox" id="no-symbols-checkbox" name="noSymbols" />
+        <label for="no-symbols-checkbox">No symbols</label>
+      </div>
+
+      <div>
+        <input type="checkbox" id="no-nums-checkbox" name="noNums" />
+        <label for="no-nums-checkbox">No numbers</label>
+      </div>
+
+      <div class="options-container">
+        <label for="password-output" class="sr-only"
+          >Password will be displayed here</label
         >
+        <input
+          id="password-output"
+          type="text"
+          readonly
+          placeholder="New password"
+          name="passwordOutput"
+          aria-live="polite"
+        />
 
         <button id="copy-password-btn">
-            <i class="fa-regular fa-copy"></i>
-            <span class="sr-only">Copy password to clipboard</span>
-            Copy
+          <i class="fa-regular fa-copy"></i>
+          <span class="sr-only">Copy password to clipboard</span>
+          Copy
         </button>
-    </div>
-</main>
+      </div>
+    </main>
 
-<script src="index.js" type="module"></script>
-</body>
-
+    <script src="index.js" type="module"></script>
+  </body>
 </html>
