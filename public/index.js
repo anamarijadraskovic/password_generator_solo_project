@@ -1,10 +1,7 @@
+import { lettersArray, numsArray, symbolsArray } from "./data.js";
 import { logEvent } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-analytics.js";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-analytics.js";
-
-const lettersArray = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q","R","S","T","U","V","W","X","Y","Z","a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z"];
-const numsArray = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
-const symbolsArray = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","=","{","[","}","]",",","|",":",";","<",">",".","?","/"];
 
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
@@ -15,7 +12,7 @@ const firebaseConfig = {
   storageBucket: "drasko-password-generator.firebasestorage.app",
   messagingSenderId: "499672938603",
   appId: "1:499672938603:web:ff3cec7ed51f887900592e",
-  measurementId: "G-NWNJG4QPFE"
+  measurementId: "G-NWNJG4QPFE",
 };
 
 // Initialize Firebase
@@ -37,7 +34,7 @@ generateBtn.addEventListener("click", () => {
   logEvent(analytics, "generate_password", {
     length: Number(passwordLengthEl.value),
     includeNumbers: !numsExcluded.checked,
-    includeSymbols: !symbolsExcluded.checked
+    includeSymbols: !symbolsExcluded.checked,
   });
 });
 
@@ -77,34 +74,40 @@ function copyOnClick() {
     copyBtn.textContent = "Copied!";
     clearTimeout(copyTimeout);
     copyTimeout = setTimeout(() => {
-      copyBtn.innerHTML = "<i class=\"fa-regular fa-copy\"></i> Copy";
+      copyBtn.innerHTML = '<i class="fa-regular fa-copy"></i> Copy';
     }, 2000);
   });
 }
 
 // THEME SWITCHING
 function applyTheme(theme) {
-    if (theme === "dark") {
-        root.setAttribute("data-theme", "dark");
-    } else {
-        root.removeAttribute("data-theme");
-    }
+  if (theme === "dark") {
+    root.setAttribute("data-theme", "dark");
+  } else {
+    root.removeAttribute("data-theme");
+  }
 }
 
 // Get stored theme OR system preference
-let theme = localStorage.getItem("theme") || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+let theme =
+  localStorage.getItem("theme") ||
+  (window.matchMedia("(prefers-color-scheme: dark)").matches
+    ? "dark"
+    : "light");
 applyTheme(theme);
 
 // Toggle button
 changeThemeBtn.addEventListener("click", () => {
-    theme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
-    localStorage.setItem("theme", theme);
-    applyTheme(theme);
+  theme = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+  localStorage.setItem("theme", theme);
+  applyTheme(theme);
 });
 
 // Listen for system changes if user hasn't selected a theme
-window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+window
+  .matchMedia("(prefers-color-scheme: dark)")
+  .addEventListener("change", (e) => {
     if (!localStorage.getItem("theme")) {
-        applyTheme(e.matches ? 'dark' : 'light');
+      applyTheme(e.matches ? "dark" : "light");
     }
-});
+  });

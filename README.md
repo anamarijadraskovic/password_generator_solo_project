@@ -1,8 +1,9 @@
 # 🔐 Password Generator
 
-A simple, responsive password generator web app and Progressive Web App (PWA).  
+A simple, responsive password generator web app and Progressive Web App (PWA).
 
 Users can:
+
 - Choose the password length
 - Decide whether to include symbols or numbers
 - Copy the generated password with one click
@@ -14,6 +15,7 @@ Users can:
 ---
 
 ## 🚀 Built With
+
 - **HTML5**
 - **CSS3**
 - **JavaScript (ES6)**
@@ -22,7 +24,9 @@ Users can:
 ---
 
 ## 📚 What I Learned
+
 While building this project, I practiced:
+
 - DOM manipulation with `.addEventListener()`, `.querySelector()`, and `.getElementById()`
 - Using array methods like `concat()` for building character pools
 - Implementing randomization with `Math.random()` and `Math.floor()`
@@ -31,7 +35,6 @@ While building this project, I practiced:
 - Toggling themes dynamically for light/dark mode
 - Deploying a static site using Firebase Hosting
 - Adding accessible labels and improving screen reader support
-
 
 ---
 
