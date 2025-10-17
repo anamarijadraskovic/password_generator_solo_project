@@ -12,16 +12,12 @@ Users can:
 
 👉 **Live Demo:** [Password Generator](https://drasko-password-generator.firebaseapp.com/)
 
----
-
 ## 🚀 Built With
 
 - **HTML5**
 - **CSS3**
 - **JavaScript (ES6)**
 - **Git**
-
----
 
 ## 📚 What I Learned
 
@@ -35,8 +31,6 @@ While building this project, I practiced:
 - Toggling themes dynamically for light/dark mode
 - Deploying a static site using Firebase Hosting
 - Adding accessible labels and improving screen reader support
-
----
 
 ## 📸 Screenshot
 
